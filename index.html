@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVX Reg - Free Fire Safe Regedit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Press+Start+2P&display=swap');
+        
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #1a0000;
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        .title-text {
+            font-family: 'Bungee', cursive;
+            text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+        }
+        
+        .price-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+        }
+        
+        .price-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.8);
+        }
+        
+        .social-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .social-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(255, 0, 0, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+            }
+        }
+        
+        .fire-effect {
+            position: relative;
+        }
+        
+        .fire-effect::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: linear-gradient(to top, rgba(255, 60, 0, 0.8), transparent);
+            border-radius: 50%;
+            filter: blur(5px);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Audio Player -->
+    <audio id="bgMusic" loop class="hidden">
+        <source src="https://soundcloud.com/timofij-46782837/sets/olha-mensagem-ultra-slowed?utm_source=clipboard&utm_campaign=wtshare&utm_medium=widget&utm_content=https%253A%252F%252Fsoundcloud.com%252Ftimofij-46782837%252Fsets%252Folha-mensagem-ultra-slowed" type="audio/mpeg">
+    </audio>
+    
+    <!-- Music Control -->
+    <div class="fixed bottom-4 right-4 z-50">
+        <button id="musicToggle" class="bg-red-700 hover:bg-red-800 text-white p-3 rounded-full shadow-lg">
+            <i class="fas fa-music text-xl"></i>
+        </button>
+    </div>
+    
+    <!-- Main Container -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <header class="text-center mb-12 fire-effect">
+            <div class="flex justify-center mb-4">
+                <img src="https://i.gifer.com/origin/8d/8d58a8e9c7e0a9570e5e8e4e2e0e9e8e.gif" alt="Free Fire Logo" class="w-24 h-24 object-contain">
+            </div>
+            <h1 class="title-text text-4xl md:text-6xl text-red-500 mb-4">AVX REGEDIT</h1>
+            <p class="text-lg text-red-300 mb-6">100% SAFE FOR YOUR MAIN ID</p>
+            <div class="bg-red-900 bg-opacity-50 p-4 rounded-lg max-w-3xl mx-auto">
+                <p class="text-yellow-200 text-sm md:text-base">⚠️ NOT A HACK - NO RISK OF BAN ⚠️</p>
+                <p class="text-white text-xs md:text-sm mt-2">Compatible with Android & iOS | Works on all Free Fire versions</p>
+            </div>
+        </header>
+        
+        <!-- Features Section -->
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl text-center text-red-400 mb-8">WHY CHOOSE OUR REGEDIT?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-red-900 bg-opacity-30 p-6 rounded-lg border border-red-700 text-center">
+                    <i class="fas fa-shield-alt text-4xl text-yellow-400 mb-4"></i>
+                    <h3 class="text-xl text-white mb-2">100% SAFE</h3>
+                    <p class="text-red-100 text-sm">Your main ID remains completely secure with our regedit service</p>
+                </div>
+                <div class="bg-red-900 bg-opacity-30 p-6 rounded-lg border border-red-700 text-center">
+                    <i class="fas fa-bolt text-4xl text-yellow-400 mb-4"></i>
+                    <h3 class="text-xl text-white mb-2">INSTANT DELIVERY</h3>
+                    <p class="text-red-100 text-sm">Get your regedit files immediately after purchase</p>
+                </div>
+                <div class="bg-red-900 bg-opacity-30 p-6 rounded-lg border border-red-700 text-center">
+                    <i class="fas fa-headset text-4xl text-yellow-400 mb-4"></i>
+                    <h3 class="text-xl text-white mb-2">24/7 SUPPORT</h3>
+                    <p class="text-red-100 text-sm">Our team is always ready to assist you with any issues</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Pricing Section -->
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl text-center text-red-400 mb-8">CHOOSE YOUR PACKAGE</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Basic Package -->
+                <div class="price-card bg-gradient-to-b from-gray-800 to-gray-900 rounded-xl overflow-hidden border-2 border-yellow-500 transform hover:scale-105 transition-all duration-300">
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-bold text-yellow-400 mb-2">BASIC</h3>
+                        <div class="text-4xl font-bold text-white mb-4">₹550</div>
+                        <ul class="text-left text-gray-300 text-sm space-y-2 mb-6">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Basic Regedit Features</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Safe for Main ID</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> 3 Days Support</li>
+                        </ul>
+                        <button onclick="showSocialOptions()" class="w-full bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                            BUY NOW
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Gold Package -->
+                <div class="price-card bg-gradient-to-b from-yellow-700 to-yellow-800 rounded-xl overflow-hidden border-2 border-yellow-300 transform hover:scale-105 transition-all duration-300 relative pulse">
+                    <div class="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-bl-lg">POPULAR</div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-bold text-white mb-2">GOLD</h3>
+                        <div class="text-4xl font-bold text-white mb-4">₹900</div>
+                        <ul class="text-left text-gray-100 text-sm space-y-2 mb-6">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-400 mr-2"></i> All Basic Features</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-400 mr-2"></i> Enhanced Performance</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-400 mr-2"></i> 7 Days Support</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-400 mr-2"></i> Priority Updates</li>
+                        </ul>
+                        <button onclick="showSocialOptions()" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                            BUY NOW
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Premium Package -->
+                <div class="price-card bg-gradient-to-b from-red-700 to-red-900 rounded-xl overflow-hidden border-2 border-red-300 transform hover:scale-105 transition-all duration-300">
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-bold text-white mb-2">PREMIUM</h3>
+                        <div class="text-4xl font-bold text-white mb-4">₹1500</div>
+                        <ul class="text-left text-gray-100 text-sm space-y-2 mb-6">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-300 mr-2"></i> All Gold Features</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-300 mr-2"></i> Maximum Performance</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-300 mr-2"></i> 30 Days Support</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-300 mr-2"></i> Exclusive Updates</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-300 mr-2"></i> VIP Customer Service</li>
+                        </ul>
+                        <button onclick="showSocialOptions()" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                            BUY NOW
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- How It Works -->
+        <section class="mb-16 bg-red-900 bg-opacity-20 p-8 rounded-xl border border-red-700 max-w-4xl mx-auto">
+            <h2 class="text-2xl md:text-3xl text-center text-red-400 mb-8">HOW IT WORKS</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="text-center">
+                    <div class="bg-red-800 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold">1</span>
+                    </div>
+                    <h3 class="text-lg text-white mb-2">Choose Package</h3>
+                    <p class="text-red-200 text-sm">Select the regedit package that suits your needs</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-red-800 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold">2</span>
+                    </div>
+                    <h3 class="text-lg text-white mb-2">Contact Us</h3>
+                    <p class="text-red-200 text-sm">Message us on your preferred platform</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-red-800 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold">3</span>
+                    </div>
+                    <h3 class="text-lg text-white mb-2">Get Regedit</h3>
+                    <p class="text-red-200 text-sm">Receive your files and enjoy enhanced gameplay</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials -->
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl text-center text-red-400 mb-8">PLAYER REVIEWS</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div class="bg-red-900 bg-opacity-30 p-6 rounded-lg border border-red-700">
+                    <div class="flex items-center mb-4">
+                        <img src="https://via.placeholder.com/50" alt="Player" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="text-white">ProPlayer99</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-red-100 text-sm">"The gold package is amazing! My gameplay improved instantly and my ID is still safe after 2 months."</p>
+                </div>
+                <div class="bg-red-900 bg-opacity-30 p-6 rounded-lg border border-red-700">
+                    <div class="flex items-center mb-4">
+                        <img src="https://via.placeholder.com/50" alt="Player" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="text-white">FF_King</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-red-100 text-sm">"Worth every rupee! The premium package gives me an edge without risking my main account."</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Social Options Modal -->
+        <div id="socialModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
+            <div class="bg-gray-900 border-2 border-red-700 rounded-xl p-8 max-w-md w-full mx-4 relative">
+                <button onclick="hideSocialOptions()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+                <h3 class="text-2xl text-center text-red-500 mb-6">CONTACT US TO PURCHASE</h3>
+                <p class="text-center text-white mb-8">Message us on your preferred platform:</p>
+                
+                <div class="space-y-4">
+                    <a href="https://www.instagram.com/avx_reg?igsh=MTR1dHR4bmxwbm53bQ%3D%3D&utm_source=qr" target="_blank" class="social-btn flex items-center justify-center bg-gradient-to-r from-pink-600 to-purple-600 text-white py-3 px-6 rounded-lg">
+                        <i class="fab fa-instagram text-2xl mr-3"></i>
+                        <span>Instagram</span>
+                    </a>
+                    
+                    <a href="https://t.me/+rYouZ4vXZ_A3MDJl" target="_blank" class="social-btn flex items-center justify-center bg-blue-500 text-white py-3 px-6 rounded-lg">
+                        <i class="fab fa-telegram text-2xl mr-3"></i>
+                        <span>Telegram</span>
+                    </a>
+                    
+                    <a href="http://wa.me/6283867936993" target="_blank" class="social-btn flex items-center justify-center bg-green-600 text-white py-3 px-6 rounded-lg">
+                        <i class="fab fa-whatsapp text-2xl mr-3"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-black bg-opacity-50 py-6 border-t border-red-900">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-red-400 text-sm mb-2">© 2023 AVX Regedit. Not affiliated with Garena or Free Fire.</p>
+            <p class="text-gray-500 text-xs">This service provides safe regedit files that don't modify game files or violate Free Fire's terms of service.</p>
+        </div>
+    </footer>
+    
+    <!-- Fire Animation Background -->
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+        <img src="https://i.gifer.com/origin/8d/8d58a8e9c7e0a9570e5e8e4e2e0e9e8e.gif" alt="Fire background" class="w-full h-full object-cover opacity-20">
+    </div>
+    
+    <script>
+        // Music toggle functionality
+        const musicToggle = document.getElementById('musicToggle');
+        const bgMusic = document.getElementById('bgMusic');
+        let isMusicPlaying = false;
+        
+        musicToggle.addEventListener('click', function() {
+            if (isMusicPlaying) {
+                bgMusic.pause();
+                musicToggle.innerHTML = '<i class="fas fa-music text-xl"></i>';
+                musicToggle.classList.remove('bg-red-800');
+                musicToggle.classList.add('bg-red-700');
+            } else {
+                bgMusic.play();
+                musicToggle.innerHTML = '<i class="fas fa-pause text-xl"></i>';
+                musicToggle.classList.remove('bg-red-700');
+                musicToggle.classList.add('bg-red-800');
+            }
+            isMusicPlaying = !isMusicPlaying;
+        });
+        
+        // Social options modal
+        function showSocialOptions() {
+            document.getElementById('socialModal').classList.remove('hidden');
+        }
+        
+        function hideSocialOptions() {
+            document.getElementById('socialModal').classList.add('hidden');
+        }
+        
+        // Close modal when clicking outside
+        document.getElementById('socialModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                hideSocialOptions();
+            }
+        });
+        
+        // Try to play music automatically (may be blocked by browsers)
+        document.addEventListener('DOMContentLoaded', function() {
+            const promise = bgMusic.play();
+            
+            if (promise !== undefined) {
+                promise.catch(error => {
+                    // Autoplay was prevented
+                    console.log('Autoplay prevented, showing play button');
+                }).then(() => {
+                    // Autoplay started
+                    isMusicPlaying = true;
+                    musicToggle.innerHTML = '<i class="fas fa-pause text-xl"></i>';
+                    musicToggle.classList.remove('bg-red-700');
+                    musicToggle.classList.add('bg-red-800');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
